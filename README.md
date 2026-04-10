@@ -59,7 +59,7 @@ cp .env.example .env
 Edite o `.env`:
 
 ```env
-# Chave de API Eupago (Backoffice → Conta → API)
+# Chave de API Eupago (Backoffice → Canais → Listagem de Canais → Editar)
 EUPAGO_API_KEY=a1b2c3d4-e5f6-...
 
 # Configurações SMTP para envio de emails
@@ -89,11 +89,15 @@ Estrutura recomendada no servidor:
 
 ### 4. Configurar o Webhook na Eupago
 
-No backoffice da Eupago, configure o URL de webhook para:
+No backoffice da Eupago, siga estes passos:
 
-```
-https://o-seu-dominio.pt/index.php
-```
+1. Aceda a **Canais** → **Listagem de Canais**
+2. Clique em **Editar** no canal correspondente
+3. No campo **Site de Retorno**, preencha com o URL do seu servidor:
+   ```
+   https://o-seu-dominio.pt/index.php
+   ```
+4. Copie a **Chave API** que aparece nessa mesma página e cole no ficheiro `.env` no campo `EUPAGO_API_KEY`
 
 ---
 
@@ -131,7 +135,6 @@ O campo de valor fica bloqueado e preenchido automaticamente.
 | HTTPS obrigatório | Redireciona automaticamente HTTP → HTTPS |
 | Sanitização de inputs | Telemóvel, valor e IDs validados antes de qualquer operação |
 
-> ⚠️ **Nunca faça commit do ficheiro `.env`** com as suas credenciais reais.
 
 ---
 
